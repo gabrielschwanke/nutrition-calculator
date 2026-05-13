@@ -5,6 +5,58 @@ $bodyClass = "formulario-page";
 include 'header.php'; 
 ?>
 
+<div class="form-layout">
+
+    <!-- LADO ESQUERDO -->
+    <div class="features-side">
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <span>🥗</span>
+                <h3>Plano alimentar inteligente</h3>
+                <p>
+                    Receba sugestões personalizadas
+                    com base nos seus objetivos.
+                </p>
+            </div>
+
+            <div class="feature-image">
+                <img src="img/card1.png" alt="">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <span>📱</span>
+                <h3>Acompanhe seu progresso</h3>
+                <p>
+                    Monitore sua evolução
+                    diretamente pela plataforma.
+                </p>
+            </div>
+
+            <div class="feature-image">
+                <img src="img/card2.png" alt="">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <span>⚡</span>
+                <h3>Cálculos automáticos</h3>
+                <p>
+                    Tudo automatizado
+                    para facilitar sua rotina.
+                </p>
+            </div>
+
+            <div class="feature-image">
+                <img src="img/card3.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
     
     <form action="processa.php" method="post" class="form-card">
 

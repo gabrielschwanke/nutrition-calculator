@@ -10,9 +10,12 @@ if (session_status() === PHP_SESSION_NONE) {
   <title><?= $pageTitle ?? "Calculadora de Dieta" ?></title>
   <link rel="stylesheet" href="css/style.css">
   <script src="custom-select.js" defer></script>
+  <script src="bg-animado.js" defer></script>
   <link rel="icon" type="image/png" href="img/icone4.png">
 </head>
 <body class="<?= $bodyClass ?? '' ?>">
+
+<div class="bg-particles"></div>
 
 <header class="site-header">
   <div class="container">

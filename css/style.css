@@ -22,25 +22,184 @@ body {
   text-align: center;
 }
 
+/* ===== LAYOUT 2 COLUNAS ===== */
+
+.form-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  min-height: calc(100vh - 120px);
+
+  padding: 40px 0;
+}
+
+/* ===== LADO ESQUERDO ===== */
+
+.features-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-right: 40px;
+}
+
+/* ===== CARDS ===== */
+
+.feature-card {
+  position: relative;
+  min-height: 220px;
+  padding: 32px;
+  width: 90%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition:
+    width 0.45s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  width: 115%;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+  max-width: 300px;
+}
+
+.feature-content span {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.feature-content h3 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+.feature-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* ===== IMAGEM ===== */
+
+.feature-image {
+  position: absolute;
+  right: -140px;
+  bottom: 0;
+  width: 260px;
+  height: 260px;
+  opacity: 0;
+  transition:
+    right 0.45s ease,
+    opacity 0.45s ease;
+  overflow: hidden;
+}
+
+.feature-card:hover .feature-image {
+  right: 0;
+  opacity: 1;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-card:nth-child(1) {
+  background: #eef8f1;
+}
+
+.feature-card:nth-child(2) {
+  background: #f3f0ff;
+}
+
+.feature-card:nth-child(3) {
+  background: #fff4ea;
+}
+
+/* ===== FORM DIREITA ===== */
+
+.calculator-side {
+  width: 420px;
+  flex-shrink: 0;
+}
+
 /* === Fundo exclusivo da página de formulário === */
 body.formulario-page {
-  background: url("../img/bgfundo33.jpeg") no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
 }
 
-body.formulario-page::before {
-  content: "";
+.bg-particles {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(168, 203, 25, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(34, 197, 94, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 50%
+    );
+  background-size:
+    400px 400px,
+    600px 600px,
+    300px 300px;
+  animation: float 25s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-30px) scale(1.05);
+  }
+  66% {
+    transform: translateY(-15px) scale(0.98);
+  }
+}
+
+/* Garante que header e main fiquem acima do canvas */
+.site-header,
+.site-main {
+  position: relative;
+  z-index: 1;
 }
 
 /* Centraliza o formulário na tela */
@@ -65,80 +224,61 @@ body.formulario-page .site-footer {
 
 /* === Card do formulário (versão moderna glassmorphism) === */
 .form-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(2px) saturate(180%);
+  background: rgba(255, 255, 255, 0.75); /* mais opaco */
+  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(168, 203, 25, 0.25); /* borda verdinha sutil */
   border-radius: 24px;
-  padding: 40px 44px;
-  width: 420px;
-  margin: 70px auto;
-  margin-top: -80px;
+  padding: 14px 30px;
+  width: 380px;
+  margin: 20px auto;
   text-align: left;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease,
+  box-shadow: 0 10px 40px rgba(31, 111, 74, 0.12); /* sombra suave esverdeada */
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
     border-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* leve brilho no hover */
-.form-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(168, 203, 25, 0.25),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none; /* ← ESSENCIAL: impede o bloqueio dos campos */
-}
-
-.form-card:hover::before {
-  opacity: 1;
-}
-
 .form-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 55px rgba(0, 0, 0, 0.35);
-  border-color: rgba(168, 203, 25, 0.35);
+  box-shadow: 0 16px 55px rgba(168, 203, 25, 0.25);
+  border-color: rgba(168, 203, 25, 0.5);
 }
 
-/* Título */
+/* Título escuro em fundo claro */
 .form-card h2 {
   margin-bottom: 26px;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #eafedb;
+  color: #1f3a2d; /* verde escuro */
   text-align: center;
   letter-spacing: 0.8px;
-  text-shadow: 0 1px 8px rgba(168, 203, 25, 0.25);
+  text-shadow: none;
 }
 
-/* Labels */
+/* Labels escuras */
 .form-card label {
   display: block;
   margin-bottom: 6px;
   font-size: 15px;
   font-weight: 600;
-  color: #f4f4f4;
+  color: #374151; /* cinza escuro */
 }
 
-/* Inputs e selects */
+/* Inputs com bordas mais visíveis */
 .form-card input[type="number"],
 .form-card input[type="text"],
 .form-card select {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1.5px solid #d1d5db;
   border-radius: 12px;
   font-size: 15px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #222;
+  background: #ffffff;
+  color: #1f2937;
   transition: all 0.3s ease;
 }
 
@@ -146,7 +286,7 @@ body.formulario-page .site-footer {
 .form-card select:focus {
   outline: none;
   border-color: #a8cb19;
-  box-shadow: 0 0 14px rgba(168, 203, 25, 0.55);
+  box-shadow: 0 0 0 4px rgba(168, 203, 25, 0.15);
 }
 
 /* Botão */
@@ -189,7 +329,9 @@ body.formulario-page .site-footer {
   padding: 10px 14px;
   font-size: 15px;
   color: #333;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .custom-select .selected:hover {
@@ -246,7 +388,7 @@ body.formulario-page .site-footer {
   border-radius: 10px;
   font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
+  color: #030303;
   background: rgba(0, 0, 0, 0.6); /* leve transparência */
   border-left: 6px solid #facc15; /* destaque amarelo */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
@@ -259,18 +401,18 @@ body.formulario-page .site-footer {
 .alerta-imc.alerta-perder {
   border-left-color: #ef4444; /* vermelho */
   background: rgba(239, 68, 68, 0.15);
-  color: #fef2f2;
+  color: #000000;
 }
 
 .alerta-imc.alerta-ganhar {
   border-left-color: #22c55e; /* verde */
   background: rgba(34, 197, 94, 0.15);
-  color: #ecfdf5;
+  color: #000000;
 }
 
 /* Ícone e destaque no texto */
 .alerta-imc strong {
-  color: #fff;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -281,23 +423,13 @@ body.formulario-page .site-footer {
 /* ======== PÁGINA DE RESULTADO (processa.php) ======== */
 body.processa-page {
   position: relative;
-  background: url("../img/bgfundo36.jpeg") no-repeat center center fixed;
+  background: url #ffffff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   z-index: 1;
-}
-
-/* Camada escurecida sobre o fundo */
-body.processa-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
-  pointer-events: none;
 }
 
 /* Conteúdo acima da camada escura */
@@ -322,7 +454,7 @@ body.processa-page header {
 .processa-page h1,
 .processa-page h2 {
   text-align: center;
-  color: #1f2937;
+  color: #1f3a2d;
   margin-bottom: 25px;
   font-size: 2rem;
 }
@@ -357,6 +489,7 @@ body.processa-page header {
   border-bottom: 1px solid #f0f3f6;
   text-align: left;
   font-size: 15px;
+  color: #1f2937;
 }
 
 .result-table th {
@@ -369,6 +502,10 @@ body.processa-page header {
 
 .result-table tr:last-child td {
   border-bottom: none;
+}
+
+.result-table tr:hover {
+  background: rgba(168, 203, 25, 0.05);
 }
 
 .highlight {
@@ -400,11 +537,11 @@ body.processa-page header {
 }
 
 .result-header h1 {
-  color: #fff;
+  color: #1f3a2d;
 }
 
 .result-header p {
-  color: #ffffff;
+  color: #4b5563;
 }
 
 .cards {
@@ -424,8 +561,10 @@ body.processa-page header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  color: #fff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  color: #1f2937;
 }
 
 .card:hover {
@@ -449,7 +588,7 @@ body.processa-page header {
 .card p {
   margin: 6px 0 0;
   font-size: 14px;
-  color: #bcbcbc;
+  color: #6b7280;
 }
 /* === ORIENTAÇÕES – GLASSMORPHISM === */
 .orientacoes {
@@ -463,7 +602,9 @@ body.processa-page header {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transform: translateY(35px);
-  transition: opacity 0.9s ease-out, transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 0.9s ease-out,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.8s ease;
   line-height: 1.7;
 }
@@ -481,7 +622,7 @@ body.processa-page header {
 .orientacoes h2,
 .dicas-alimentacao h3,
 .dicas-macros h3 {
-  color: #a8cb19;
+  color: #89b215;
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -492,7 +633,7 @@ body.processa-page header {
 .orientacoes p,
 .dicas-alimentacao p,
 .dicas-macros p {
-  color: #fcfcfc;
+  color: #374151;
   margin-bottom: 10px;
 }
 
@@ -502,12 +643,12 @@ body.processa-page header {
 }
 
 .orientacoes em {
-  color: #ffffff;
+  color: #060606;
   font-style: italic;
 }
 
 .orientacoes li {
-  color: #fff;
+  color: #000000;
 }
 
 .orientacoes h3 {
@@ -527,7 +668,9 @@ body.processa-page header {
   border: 1px solid rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(10px) saturate(160%);
   box-shadow: 0 6px 18px rgba(54, 54, 54, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .dicas-alimentacao:hover,
@@ -722,7 +865,9 @@ body.login-page::before {
   border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .login-box button:hover {
@@ -785,7 +930,9 @@ body.cadastro-page::before {
   width: 380px;
   color: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .cadastro-box:hover {
@@ -838,7 +985,9 @@ body.cadastro-page::before {
   border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .cadastro-box button:hover {
@@ -907,7 +1056,9 @@ body.perfil-page::before {
   max-width: 500px;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
   margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .perfil-card:hover {
@@ -943,7 +1094,9 @@ body.perfil-page::before {
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .btn-voltar:hover {
@@ -1120,7 +1273,10 @@ body.suporte-page::before {
   width: 280px;
   color: #fff;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1152,7 +1308,9 @@ body.suporte-page::before {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .btn-suporte:hover {
@@ -1162,20 +1320,12 @@ body.suporte-page::before {
 
 /* ======== PÁGINA DE DESEMPENHO ======== */
 body.desempenho-page {
-  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
+  background: #ffffff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-body.desempenho-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 .desempenho-container {
@@ -1187,7 +1337,7 @@ body.desempenho-page::before {
   text-align: center;
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: #000000;
   padding: 40px 20px;
   margin-top: -150px;
 }
@@ -1195,34 +1345,57 @@ body.desempenho-page::before {
 .desempenho-container h1 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #000000;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .desempenho-intro {
-  color: #dcdcdc;
+  color: #000000;
   font-size: 16px;
   margin-bottom: 40px;
 }
 
 /* Card do gráfico */
 .grafico-card {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 30px;
+  background: rgba(180, 178, 178, 0.72);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(168, 203, 25, 0.18);
+  border-radius: 28px;
+  padding: 34px;
   width: 100%;
-  max-width: 700px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+  max-width: 760px;
+  box-shadow: 0 10px 40px rgba(31, 111, 74, 0.08);
   margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .grafico-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(168, 203, 25, 0.5);
-  border-color: #a8cb19;
+  border-color: rgba(168, 203, 25, 0.4);
+  box-shadow:
+    0 20px 60px rgba(168, 203, 25, 0.18);
+}
+
+.grafico-card::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 240px;
+  height: 240px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,203,25,.12),
+      transparent 70%
+    );
+  z-index: 0;
 }
 
 /* ====== Página de Planos ====== */
@@ -1277,7 +1450,9 @@ body.planos-page::before {
   width: 300px;
   color: #fff;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1290,7 +1465,7 @@ body.planos-page::before {
 }
 
 .plano-card h2 {
-  color: #a8cb19;
+  color: #defb68;
   margin-bottom: 16px;
 }
 
@@ -1329,7 +1504,9 @@ body.planos-page::before {
   font-size: 15px;
   cursor: pointer;
   margin-top: auto;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .plano-card .vm:hover {
@@ -1368,7 +1545,9 @@ body.planos-page::before {
   padding: 12px 26px;
   text-decoration: none;
   font-size: 16px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -1505,7 +1684,9 @@ body.contato-page::before {
   padding: 12px 26px;
   text-decoration: none;
   font-size: 16px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .btn-teste:hover {
@@ -1578,7 +1759,9 @@ body.funcionalidades-page::before {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f1f1f1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .passo-card:hover {
@@ -1657,7 +1840,9 @@ body.funcionalidades-page::before {
   padding: 40px 40px 50px;
   margin: 0 auto;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .plano-card:hover {
@@ -1909,7 +2094,9 @@ body.sobre-page::before {
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     z-index: 9998;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
     opacity: 0;
     transform: translateY(-10px);
   }
@@ -1928,7 +2115,9 @@ body.sobre-page::before {
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     z-index: 9998;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
     opacity: 0;
     transform: translateY(-10px);
   }
