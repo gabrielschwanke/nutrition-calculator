@@ -4,10 +4,27 @@ $bodyClass = "login-page";
 include 'header.php';
 ?>
 
-<div class="login-container">
+<div class="login-layout">
+    <div class="login-left">
+        <div class="login-image">
+            <img src="img/nutricionista.png" alt="Nutricionista">
+        </div>
+        <div class="login-info">
+            <h1>
+                Tudo o que precisa <br>
+                em um único software <br>
+                para nutricionistas
+            </h1>
+            <p>
+                Organize, acompanhe e faça seu negócio crescer
+                com um software pensado para você.
+            </p>
+        </div>
+    </div>
+
+<div class="login-right">
     <div class="login-box">
         <h2>Faça login com sua conta</h2>
-        
         <form action="validar_login.php" method="post" id="loginForm">
             <div class="form-group">
                 <label for="email">E-mail</label>

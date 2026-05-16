@@ -2,10 +2,21 @@
   box-sizing: border-box;
 }
 
+#bgAnimado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: block;
+}
+
 body {
   margin: 0;
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f5f7fb;
+  background: #fafafc;
   color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +26,6 @@ body {
 .container {
   max-width: 960px;
   margin: 36px auto;
-  padding: 20px;
 }
 
 .container h2 {
@@ -28,11 +38,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 50px;
-
+  gap: 40px;
   min-height: calc(100vh - 120px);
-
   padding: 40px 0;
 }
 
@@ -42,7 +49,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
   padding-right: 40px;
 }
 
@@ -84,6 +91,12 @@ body {
   margin-bottom: 18px;
 }
 
+.feature-content span img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
 .feature-content h3 {
   font-size: 1.7rem;
   line-height: 1.2;
@@ -102,9 +115,10 @@ body {
 .feature-image {
   position: absolute;
   right: -140px;
+  top: 0;
   bottom: 0;
   width: 260px;
-  height: 260px;
+  height: 100%;
   opacity: 0;
   transition:
     right 0.45s ease,
@@ -121,6 +135,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .feature-card:nth-child(1) {
@@ -128,7 +143,7 @@ body {
 }
 
 .feature-card:nth-child(2) {
-  background: #f3f0ff;
+  background: #e7e2fa;
 }
 
 .feature-card:nth-child(3) {
@@ -195,7 +210,6 @@ body.formulario-page {
   }
 }
 
-/* Garante que header e main fiquem acima do canvas */
 .site-header,
 .site-main {
   position: relative;
@@ -232,6 +246,7 @@ body.formulario-page .site-footer {
   padding: 14px 30px;
   width: 380px;
   margin: 20px auto;
+  margin-bottom: 100px;
   text-align: left;
   box-shadow: 0 10px 40px rgba(31, 111, 74, 0.12); /* sombra suave esverdeada */
   transition:
@@ -417,7 +432,7 @@ body.formulario-page .site-footer {
 }
 
 .alerta-container {
-  margin-top: -220px;
+  margin-top: -90px;
 }
 
 /* ======== PÁGINA DE RESULTADO (processa.php) ======== */
@@ -437,10 +452,6 @@ body.processa-page header,
 body.processa-page .container {
   position: relative;
   z-index: 1;
-}
-
-body.processa-page header {
-  z-index: 9999 !important;
 }
 
 .processa-page .container {
@@ -712,7 +723,7 @@ body.processa-page header {
 
 /* Espaço abaixo do header fixo */
 .site-main {
-  margin-top: 50px;
+  margin-top: -40px;
 }
 
 .site-header .container {
@@ -785,7 +796,7 @@ body.processa-page header {
 }
 /* ====== Página de Login ====== */
 body.login-page {
-  background: url("../img/bgfundo22.jpeg") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -793,35 +804,16 @@ body.login-page {
   flex-direction: column;
 }
 
-body.login-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
-}
-
-.login-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  margin-top: -180px;
-}
-
 .login-box {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  padding: 36px;
-  width: 360px;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 430px;
+  color: #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .login-box h2 {
@@ -838,14 +830,100 @@ body.login-page::before {
   font-weight: 600;
 }
 
+.login-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 10px 60px 40px;
+}
+
+/* =========================
+   COLUNA ESQUERDA
+========================= */
+
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -60px;
+}
+
+.login-image {
+  width: 100%;
+  max-width: 660px;
+}
+
+.login-image img {
+  width: 100%;
+  display: block;
+}
+
+/* TEXTO */
+
+.login-info {
+  max-width: 600px;
+}
+
+.login-info h1 {
+  font-size: 38px;
+  line-height: 1.05;
+  color: #47658b;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.login-info p {
+  font-size: 24px;
+  line-height: 1.4;
+  color: #6f84a0;
+}
+
+/* =========================
+   LADO DIREITO
+========================= */
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.login-box h2 {
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #a8cb19;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
 .login-box input[type="email"],
 .login-box input[type="password"] {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 14px;
   border: 1px solid #dfe6ee;
-  margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 15px;
   background: #fbfdff;
 }
 
@@ -857,17 +935,15 @@ body.login-page::before {
 
 .login-box button {
   width: 100%;
-  padding: 12px;
+  height: 56px;
   background: #a8cb19;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
-  font-size: 15px;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .login-box button:hover {
@@ -876,9 +952,10 @@ body.login-page::before {
 }
 
 .signup-text {
-  margin-top: 16px;
-  color: #fff;
+  margin-top: 18px;
+  color: #000000;
   font-size: 14px;
+  text-align: center;
 }
 
 .signup-text a {
@@ -893,20 +970,12 @@ body.login-page::before {
 
 /* ====== Página de Cadastro ====== */
 body.cadastro-page {
-  background: url("../img/bgfundo22.jpeg") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-body.cadastro-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 .cadastro-container {
@@ -918,7 +987,6 @@ body.cadastro-page::before {
   text-align: center;
   position: relative;
   z-index: 1;
-  margin-top: -135px;
 }
 
 .cadastro-box {
@@ -997,7 +1065,7 @@ body.cadastro-page::before {
 
 .cadastro-text {
   margin-top: 16px;
-  color: #fff;
+  color: #000000;
   font-size: 14px;
 }
 
@@ -1013,21 +1081,12 @@ body.cadastro-page::before {
 
 /* ======== PÁGINA DE PERFIL ======== */
 body.perfil-page {
-  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* Camada escura */
-body.perfil-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 /* Conteúdo principal */
@@ -1040,7 +1099,7 @@ body.perfil-page::before {
   text-align: left;
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: #000000;
   margin-top: -150px;
 }
 
@@ -1054,7 +1113,7 @@ body.perfil-page::before {
   color: #fff;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 6px 18px rgba(128, 136, 155, 0.15);
   margin-bottom: 30px;
   transition:
     transform 0.3s ease,
@@ -1070,7 +1129,7 @@ body.perfil-page::before {
 .perfil-card p {
   font-size: 16px;
   margin-bottom: 12px;
-  color: #eaeaea;
+  color: #1b1b1b;
 }
 
 .perfil-card strong {
@@ -1079,7 +1138,7 @@ body.perfil-page::before {
 
 /* Título */
 .perfil-container h2 {
-  color: #fff;
+  color: #000000;
   font-size: 32px;
   margin-bottom: 20px;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
@@ -1209,20 +1268,12 @@ body.perfil-page::before {
 
 /* ======== PÁGINA DE SUPORTE ======== */
 body.suporte-page {
-  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
+  background: #ffffff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-body.suporte-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 /* Container principal */
@@ -1244,12 +1295,12 @@ body.suporte-page::before {
 .suporte-container h1 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: #fff;
+  color: #000000;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .suporte-intro {
-  color: #dcdcdc;
+  color: #000000;
   font-size: 16px;
   margin-bottom: 40px;
 }
@@ -1271,7 +1322,7 @@ body.suporte-page::before {
   border-radius: 16px;
   padding: 30px 25px;
   width: 280px;
-  color: #fff;
+  color: #000000;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
   transition:
     transform 0.3s ease,
@@ -1296,7 +1347,7 @@ body.suporte-page::before {
 
 .suporte-card p {
   font-size: 15px;
-  color: #eaeaea;
+  color: #020202;
   margin-bottom: 20px;
 }
 
@@ -1339,7 +1390,7 @@ body.desempenho-page {
   z-index: 1;
   color: #000000;
   padding: 40px 20px;
-  margin-top: -150px;
+  margin-top: -70px;
 }
 
 .desempenho-container h1 {
@@ -1357,31 +1408,29 @@ body.desempenho-page {
 
 /* Card do gráfico */
 .grafico-card {
-  background: rgba(180, 178, 178, 0.72);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(168, 203, 25, 0.18);
-  border-radius: 28px;
-  padding: 34px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 30px;
+  padding: 36px;
   width: 100%;
   max-width: 760px;
-  box-shadow: 0 10px 40px rgba(31, 111, 74, 0.08);
-  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08),
+    0 2px 12px rgba(168, 203, 25, 0.06);
+
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
-    border-color 0.35s ease;
-  position: relative;
-  overflow: hidden;
+    border-color 0.35s ease,
+    background 0.35s ease;
 }
 
-.grafico-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(168, 203, 25, 0.4);
-  box-shadow:
-    0 20px 60px rgba(168, 203, 25, 0.18);
-}
-
+/* brilho suave interno */
 .grafico-card::before {
   content: "";
   position: absolute;
@@ -1389,31 +1438,43 @@ body.desempenho-page {
   right: -120px;
   width: 240px;
   height: 240px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(168,203,25,.12),
-      transparent 70%
-    );
-  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(168, 203, 25, 0.18) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* linha suave inferior */
+.grafico-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a8cb19, #d9f36b, #a8cb19);
+  opacity: 0.7;
+}
+
+.grafico-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(168, 203, 25, 0.4);
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.12),
+    0 8px 28px rgba(168, 203, 25, 0.14);
 }
 
 /* ====== Página de Planos ====== */
 body.planos-page {
-  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-body.planos-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 .planos-container {
@@ -1428,7 +1489,7 @@ body.planos-page::before {
 }
 
 .planos-container h1 {
-  color: #fff;
+  color: #000000;
   font-size: 32px;
   margin-bottom: 30px;
 }
@@ -1442,13 +1503,15 @@ body.planos-page::before {
 }
 
 .plano-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 30px;
   width: 300px;
-  color: #fff;
+  color: #000000;
+  top: 100px;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
   transition:
     transform 0.3s ease,
@@ -1470,7 +1533,7 @@ body.planos-page::before {
 }
 
 .plano-card p {
-  color: #e8e8e8;
+  color: #000000;
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -1484,13 +1547,13 @@ body.planos-page::before {
 
 .plano-card ul li {
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .plano-card .preco {
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -1499,7 +1562,7 @@ body.planos-page::before {
   border: none;
   padding: 12px;
   border-radius: 8px;
-  color: #fff;
+  color: #000000;
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
@@ -1538,7 +1601,7 @@ body.planos-page::before {
 .btn-primary {
   display: inline-block;
   background-color: #a8cb19;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
   border: none;
   border-radius: 8px;
@@ -1576,7 +1639,7 @@ body.planos-page::before {
 /* =====Pagina contato=====*/
 
 body.contato-page {
-  background: url("../img/bgfundo2.png") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   position: relative;
   min-height: 100vh;
@@ -1585,29 +1648,17 @@ body.contato-page {
   margin-top: 0;
 }
 
-body.contato-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
-}
-
 .contato-section {
   position: relative;
   z-index: 2;
   text-align: center;
   color: #fff;
-  padding: 100px 20px;
 }
 
 .container-contato {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: -180px;
+  margin-top: 50px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -1618,11 +1669,11 @@ body.contato-page::before {
 .contato-section h1 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #f1f1f1;
+  color: #000000;
 }
 
 .contato-section .subtitulo {
-  color: #ddd;
+  color: #000000;
   margin-bottom: 40px;
   font-size: 1rem;
 }
@@ -1636,7 +1687,7 @@ body.contato-page::before {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #e5e5e5;
+  color: #000000;
 }
 
 .form-group input,
@@ -1646,7 +1697,7 @@ body.contato-page::before {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #000000;
   font-size: 1rem;
   outline: none;
 }
@@ -1665,7 +1716,7 @@ body.contato-page::before {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #bbb;
+  color: #989494;
 }
 
 .form-group input:focus,
@@ -1696,7 +1747,7 @@ body.contato-page::before {
 
 /* Fundo com imagem e camada escura */
 body.funcionalidades-page {
-  background: url("../img/bgfundo28.jpeg") no-repeat center center fixed;
+  background: #ffffff;
   background-size: cover;
   position: relative;
   min-height: 100vh;
@@ -1705,21 +1756,10 @@ body.funcionalidades-page {
   margin-top: 0;
 }
 
-body.funcionalidades-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
-}
-
 .funcionalidades-section {
   position: relative;
   text-align: center;
-  color: #f0f0f0;
+  color: #000000;
   padding: 100px 20px;
   z-index: 1;
 }
@@ -1729,17 +1769,17 @@ body.funcionalidades-page::before {
   z-index: 2;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: -180px;
+  margin-top: -50px;
 }
 
 .funcionalidades-section h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #000000;
 }
 
 .funcionalidades-section .subtitulo {
-  color: #ddd;
+  color: #000000;
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
@@ -1758,7 +1798,7 @@ body.funcionalidades-page::before {
   border-radius: 16px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f1f1f1;
+  color: #000000;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -1799,7 +1839,7 @@ body.funcionalidades-page::before {
   background: #a8cb19;
   border: none;
   padding: 14px 36px;
-  color: #111;
+  color: #ffffff;
   font-weight: bold;
   font-size: 1.1rem;
   border-radius: 8px;
@@ -1858,6 +1898,7 @@ body.funcionalidades-page::before {
   gap: 10px;
   margin-bottom: 20px;
   font-size: 16px;
+  color: #000;
 }
 
 .plano-toggle small {
@@ -1907,6 +1948,10 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
+.plano-card h1 {
+  color: #000;
+}
+
 /* Preço */
 .plano-card h2 {
   font-size: 2rem;
@@ -1941,7 +1986,7 @@ input:checked + .slider:before {
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 15px;
-  color: #fff;
+  color: #000000;
 }
 
 .beneficios li::before {
@@ -1954,7 +1999,7 @@ input:checked + .slider:before {
 /* Botão */
 .assinatura {
   background: #a8cb19;
-  color: #1a1a1a;
+  color: #ffffff;
   border: none;
   border-radius: 30px;
   padding: 14px 40px;
@@ -1972,7 +2017,7 @@ input:checked + .slider:before {
 /* =====Pagina Quem somos===== */
 
 body.sobre-page {
-  background: url("../img/bgfundo26.jpeg") no-repeat center center fixed;
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -1980,17 +2025,6 @@ body.sobre-page {
   display: flex;
   flex-direction: column;
   margin-top: 0;
-}
-
-body.sobre-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.79);
-  z-index: 0;
 }
 
 .sobre-section {
@@ -2007,10 +2041,10 @@ body.sobre-page::before {
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 60px 40px;
-  color: #f1f1f1;
+  margin-top: -50px;
+  color: #000000;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   text-align: left;
-  margin-top: -180px;
 }
 
 .container-sobre h1 {
@@ -2029,7 +2063,7 @@ body.sobre-page::before {
 .container-sobre p {
   line-height: 1.7;
   margin-bottom: 18px;
-  color: #f7f7f7;
+  color: #000000;
 }
 
 .container-sobre ul {

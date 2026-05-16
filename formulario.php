@@ -12,7 +12,9 @@ include 'header.php';
 
         <div class="feature-card">
             <div class="feature-content">
-                <span>🥗</span>
+                <span>
+                    <img src="img/celular.png" alt="celular">
+                </span>
                 <h3>Plano alimentar inteligente</h3>
                 <p>
                     Receba sugestões personalizadas
@@ -27,7 +29,9 @@ include 'header.php';
 
         <div class="feature-card">
             <div class="feature-content">
-                <span>📱</span>
+                <span>
+                    <img src="img/grafico.png" alt="grafico">
+                </span>
                 <h3>Acompanhe seu progresso</h3>
                 <p>
                     Monitore sua evolução
@@ -42,7 +46,9 @@ include 'header.php';
 
         <div class="feature-card">
             <div class="feature-content">
-                <span>⚡</span>
+                <span>
+                    <img src="img/chama.png" alt="chama">
+                </span>
                 <h3>Cálculos automáticos</h3>
                 <p>
                     Tudo automatizado

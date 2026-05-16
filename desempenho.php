@@ -83,14 +83,32 @@ new Chart(ctx, {
   },
   options: {
     responsive: true,
-    plugins: {
-      legend: { labels: { color: '#fff' } }
+  plugins: {
+    legend: {
+      labels: {
+        color: '#1e293b'
+      }
+    }
+  },
+  scales: {
+    x: {
+      ticks: {
+        color: '#334155'
+      },
+      grid: {
+        color: 'rgba(15, 23, 42, 0.08)'
+      }
     },
-    scales: {
-      x: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.2)' } },
-      y: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.2)' } }
+    y: {
+      ticks: {
+        color: '#334155'
+      },
+      grid: {
+        color: 'rgba(15, 23, 42, 0.08)'
+      }
     }
   }
+}
 });
 </script>
 <?php endif; ?>
