@@ -13,7 +13,7 @@ include 'includes/header.php';
         <div class="feature-card">
             <div class="feature-content">
                 <span>
-                    <img src="img/celular.png" alt="celular">
+                    <img src="assets/img/celular.png" alt="celular">
                 </span>
                 <h3>Plano alimentar inteligente</h3>
                 <p>
@@ -23,14 +23,14 @@ include 'includes/header.php';
             </div>
 
             <div class="feature-image">
-                <img src="img/card1.png" alt="">
+                <img src="assets/img/card1.png" alt="">
             </div>
         </div>
 
         <div class="feature-card">
             <div class="feature-content">
                 <span>
-                    <img src="img/grafico.png" alt="grafico">
+                    <img src="assets/img/grafico.png" alt="grafico">
                 </span>
                 <h3>Acompanhe seu progresso</h3>
                 <p>
@@ -40,14 +40,14 @@ include 'includes/header.php';
             </div>
 
             <div class="feature-image">
-                <img src="img/card2.png" alt="">
+                <img src="assets/img/card2.png" alt="">
             </div>
         </div>
 
         <div class="feature-card">
             <div class="feature-content">
                 <span>
-                    <img src="img/chama.png" alt="chama">
+                    <img src="assets/img/chama.png" alt="chama">
                 </span>
                 <h3>Cálculos automáticos</h3>
                 <p>
@@ -57,7 +57,7 @@ include 'includes/header.php';
             </div>
 
             <div class="feature-image">
-                <img src="img/card3.png" alt="">
+                <img src="assets/img/card3.png" alt="">
             </div>
         </div>
 

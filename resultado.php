@@ -1,5 +1,18 @@
 <?php 
-require 'verifica_login.php';
+/**
+ * @var string $objetivo
+ * @var float $calorias
+ * @var float $proteina
+ * @var float $carboidrato
+ * @var float $gordura
+ * @var float $perc_proteina
+ * @var float $perc_carbo
+ * @var float $perc_gordura
+ * @var int|float $fibras
+ * @var float $agua
+ */
+
+require 'includes/verifica_login.php'; // Aproveitei para ajustar o caminho que movemos antes!
 $pageTitle = "Resultado da Dieta";
 $bodyClass = "processa-page";
 include 'includes/header.php'; 
