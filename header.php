@@ -9,9 +9,9 @@ if (session_status() === PHP_SESSION_NONE) {
   <meta charset="UTF-8">
   <title><?= $pageTitle ?? "Calculadora de Dieta" ?></title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="custom-select.js" defer></script>
-  <script src="bg-animado.js" defer></script>
-  <link rel="icon" type="image/png" href="img/icone4.png">
+  <script src="assets/js/custom-select.js" defer></script>
+  <script src="assets/js/bg-animado.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/img/icone4.png">
 </head>
 <body class="<?= $bodyClass ?? '' ?>">
 
@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
   <div class="container">
     <!-- Logo -->
     <a href="formulario.php" class="logo">
-      <img src="img/logo3.png" alt="Logo Calculadora de Dieta">
+      <img src="assets/img/logo3.png" alt="Logo Calculadora de Dieta">
     </a>
 
     <!-- Botão hambúrguer (mobile) -->
@@ -37,7 +37,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <?php if (isset($_SESSION['usuario'])): ?>
         <div class="perfil-menu">
           <button class="perfil-btn">
-            <img src="img/perfil6.png" alt="Perfil" class="user-icon">
+            <img src="assets/img/perfil6.png" alt="Perfil" class="user-icon">
             <span><?= htmlspecialchars($_SESSION['usuario']['nome']) ?></span>
             <i class="seta">&#9662;</i>
           </button>
