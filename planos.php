@@ -5,7 +5,7 @@ $bodyClass = "planos-page";
 include 'header.php'; 
 ?>
 
-<main class="planos-section">
+<section class="planos-section">
   <div class="container-planos">  
     <!-- Card do plano -->
     <div class="plano-card">
@@ -41,7 +41,7 @@ include 'header.php';
       <button type="button" class="assinatura">ASSINAR AGORA</button>
     </div>
   </div>
-</main>
+</section>
 
 <script>
 const toggle = document.getElementById('togglePlano');

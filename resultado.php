@@ -5,8 +5,6 @@ $bodyClass = "processa-page";
 include 'header.php'; 
 ?>
 
-<div class="container">
-
     <?php if (!empty($alerta_imc)): ?>
         <div class="alerta-container">
             <?= $alerta_imc ?>
@@ -84,6 +82,6 @@ include 'header.php';
   <a href="formulario.php" class="btn btn-primary">Recalcular</a>
 </div>
 
-<script src="animacao-orientacoes.js"></script>
+<script src="assets/js/animacao-orientacoes.js"></script>
 
 <?php include 'footer.php'; ?> 
