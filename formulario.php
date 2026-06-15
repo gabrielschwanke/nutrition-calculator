@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Calculadora de Dieta - Formulário";
 $bodyClass = "formulario-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
 <div class="form-layout">
@@ -129,4 +129,4 @@ include 'header.php';
     </form>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

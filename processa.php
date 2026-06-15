@@ -255,7 +255,7 @@ $pageTitle = "Resultado da Dieta";
 $bodyClass = "processa-page";
 
 // ===== SALVAR PESO ATUAL NO HISTÓRICO (tabela desempenho) =====
-require 'conexao.php'; // inclui conexão ao banco
+require 'includes/conexao.php'; // inclui conexão ao banco
 
 if (isset($_SESSION['usuario']['id']) && $peso > 0) {
     $usuario_id = $_SESSION['usuario']['id'];

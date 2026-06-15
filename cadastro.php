@@ -1,7 +1,7 @@
 <?php 
 $pageTitle = "Cadastro";
 $bodyClass = "cadastro-page";
-include 'header.php';
+include 'includes/header.php';
 ?>
 
 <div class="cadastro-container">
@@ -36,4 +36,4 @@ include 'header.php';
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

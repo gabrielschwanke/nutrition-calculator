@@ -1,7 +1,7 @@
 <?php 
 $pageTitle = "Login";
 $bodyClass = "login-page";
-include 'header.php';
+include 'includes/header.php';
 ?>
 
 <div class="login-layout">
@@ -55,4 +55,4 @@ include 'header.php';
     });
 </script>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

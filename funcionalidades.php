@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Funcionalidades";
 $bodyClass = "funcionalidades-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
 <main class="funcionalidades-section">
@@ -61,4 +61,4 @@ include 'header.php';
   </div>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

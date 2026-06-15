@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conexao.php';
+require 'includes/conexao.php';
 
 // 🔒 Verifica login
 if (!isset($_SESSION['usuario']['id'])) {
@@ -42,7 +42,7 @@ $conn->close();
 $pageTitle = "Desempenho";
 $bodyClass = "desempenho-page";
 
-include 'header.php';
+include 'includes/header.php';
 ?>
 
 <div class="container desempenho-container">
@@ -113,4 +113,4 @@ new Chart(ctx, {
 </script>
 <?php endif; ?>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Contato";
 $bodyClass = "contato-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
 <main class="contato-section">
@@ -31,4 +31,4 @@ include 'header.php';
   </div>
 </main>
 
-<?php include 'footer.php'; ?> 
+<?php include 'includes/footer.php'; ?> 

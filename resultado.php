@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Resultado da Dieta";
 $bodyClass = "processa-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
     <?php if (!empty($alerta_imc)): ?>
@@ -84,4 +84,4 @@ include 'header.php';
 
 <script src="assets/js/animacao-orientacoes.js"></script>
 
-<?php include 'footer.php'; ?> 
+<?php include 'includes/footer.php'; ?> 

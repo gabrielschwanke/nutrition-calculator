@@ -2,7 +2,7 @@
 session_start();
 $pageTitle = "Suporte";
 $bodyClass = "suporte-page"; // classe para o body
-include 'header.php';
+include 'includes/header.php';
 ?>
 
 <div class="container suporte-container">
@@ -36,4 +36,4 @@ include 'header.php';
   </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

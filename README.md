@@ -1,4 +1,4 @@
-#  Nutrition Calculator --- Macronutrients & Dietary Tips
+# Nutrition Calculator --- Macronutrients & Dietary Tips
 
 A complete system developed using **PHP + MySQL** to calculate the
 ideal amount of **macronutrients** (proteins, carbohydrates, and fats)
@@ -12,46 +12,41 @@ throughout their nutritional progress.
 
 ## 🚀 Main Features
 
-* 🔐 **Authentication**
+- 🔐 **Authentication**
+  - Login, registration, logout, and route protection.
 
-  * Login, registration, logout, and route protection.
+- ⚖️ **Personalized nutritional calculation**
+  - Uses data such as age, weight, height, gender, and goal.
+  - Calculates daily calorie needs.
+  - Generates macronutrient distribution (carbohydrates, proteins, and fats).
+  - Displays a detailed table for each goal.
 
-* ⚖️ **Personalized nutritional calculation**
+- 📊 **Performance page**
+  - Charts showing user progress and records.
+  - Dynamic visualization using Chart.js.
 
-  * Uses data such as age, weight, height, gender, and goal.
-  * Calculates daily calorie needs.
-  * Generates macronutrient distribution (carbohydrates, proteins, and fats).
-  * Displays a detailed table for each goal.
+- 🧭 **Informational pages**
+  - About\
+  - Features\
+  - Contact\
+  - Support\
+  - Plans
 
-* 📊 **Performance page**
-
-  * Charts showing user progress and records.
-  * Dynamic visualization using Chart.js.
-
-* 🧭 **Informational pages**
-
-  * About\
-  * Features\
-  * Contact\
-  * Support\
-  * Plans
-
-* **Modern interface**
-
-  * Fully responsive
-  * Animated components
-  * Custom fields and refined UI
+- **Modern interface**
+  - Fully responsive
+  - Animated components
+  - Custom fields and refined UI
 
 ---
 
 ## 🛠️ Technologies Used
 
-* **PHP 7+**
-* **MySQL**
-* **HTML5 / CSS3**
-* **JavaScript**
-* **Chart.js**
-* **Custom CSS Animations**
+- **PHP 7+**
+- **MySQL**
+- **HTML5 / CSS3**
+- **JavaScript**
+- **Chart.js**
+- **Custom CSS Animations**
 
 ---
 
@@ -75,13 +70,13 @@ throughout their nutritional progress.
 
 ---
 
-##  How to Install and Run Locally (XAMPP)
+## How to Install and Run Locally (XAMPP)
 
 ### 🔧 Prerequisites
 
-* XAMPP installed (Apache + MySQL)\
-* Updated browser\
-* Git (optional)
+- XAMPP installed (Apache + MySQL)\
+- Updated browser\
+- Git (optional)
 
 ---
 
@@ -162,15 +157,41 @@ http://localhost/calculadora-nutricional/
 
 calculadora-nutricional
 │
-├── css/              # System styles
-├── img/              # Images and assets
-│   └── imagens/      # Screenshots used in the README
-├── conexao.php       # Database connection
-├── login.php         # Authentication page
-├── dashboard.php     # User dashboard
-├── desempenho.php    # Charts page
-├── processa.php      # Calculation processing
-└── database.sql      # Database structure
+├── assets/ 
+│ ├── css/ 
+│ │ ├── icons/
+│ │ └── style.css 
+│ ├── img/ 
+│ │ └── imagens/
+│ └── js/ 
+│ ├── animacao-orientacoes.js 
+│ ├── bg-animado.js 
+│ └── custom-select.js 
+│
+├── .gitignore ignorados)
+├── README.md 
+│
+├── database.sql 
+│
+├── index.php 
+├── cadastro.php 
+├── conexao.php 
+├── contato.php
+├── desempenho.php 
+├── footer.php 
+├── formulario.php 
+├── funcionalidades.php 
+├── header.php 
+├── logout.php 
+├── perfil.php 
+├── planos.php 
+├── processa.php 
+├── registrar.php 
+├── resultado.php 
+├── sobre.php
+├── suporte.php 
+├── validar_login.php 
+└── verifica_login.php
 
 ---
 

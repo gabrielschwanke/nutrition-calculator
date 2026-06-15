@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Quem Somos";
 $bodyClass = "sobre-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
 <main class="sobre-section">
@@ -48,4 +48,4 @@ include 'header.php';
   </div>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

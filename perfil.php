@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conexao.php';
+require 'includes/conexao.php';
 
 // 🔒 CORREÇÃO: Verifica se o array 'usuario' existe E se a chave 'id' está presente
 if (!isset($_SESSION['usuario']['id'])) {
@@ -49,4 +49,4 @@ include 'header.php';
     <a href="formulario.php" class="btn-voltar">← Voltar para a Calculadora</a>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

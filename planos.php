@@ -2,7 +2,7 @@
 require 'verifica_login.php';
 $pageTitle = "Planos";
 $bodyClass = "planos-page";
-include 'header.php'; 
+include 'includes/header.php'; 
 ?>
 
 <section class="planos-section">
@@ -84,4 +84,4 @@ toggle.addEventListener('change', () => {
 });
 </script>
 
-<?php include 'footer.php'; ?>  
+<?php include 'includes/footer.php'; ?>  
