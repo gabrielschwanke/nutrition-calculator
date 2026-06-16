@@ -54,19 +54,19 @@ throughout their nutritional progress.
 
 ### Login Screen
 
-![Login Screen](img/imagens/login-sreen.png)
+![Login Screen](assets/img/imagens/login-sreen.png)
 
 ### Dashboard
 
-![Dashboard](img/imagens/dashboard-page.png)
+![Dashboard](assets/img/imagens/dashboard-page.png)
 
 ### Macronutrient Calculation
 
-![Calculation](img/imagens/calculation.png)
+![Calculation](assets/img/imagens/calculation.png)
 
 ### Performance Page
 
-![Performance](img/imagens/performace-page.png)
+![Performance](assets/img/imagens/performace-page.png)
 
 ---
 
