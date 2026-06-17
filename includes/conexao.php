@@ -12,10 +12,10 @@ if ($_SERVER['SERVER_NAME'] == "localhost") {
 } else {
 
     // CONFIGURAÇÃO DO SERVIDOR
-    $host = "sql105.infinityfree.com";
-    $user = "if0_41397420";
-    $pass = "5ffW9GGVFs";
-    $db   = "if0_41397420_nutricaodb";
+    $host = "mysql.railway.internal";
+    $user = "root";
+    $pass = "cvaksVdxvSXALPuYQWyjDWlMYmFWotwp";
+    $db   = "railway";
 
 }
 
