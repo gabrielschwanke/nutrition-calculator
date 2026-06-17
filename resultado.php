@@ -12,7 +12,7 @@
  * @var float $agua
  */
 
-require 'includes/verifica_login.php'; // Aproveitei para ajustar o caminho que movemos antes!
+require 'verifica_login.php'; // Aproveitei para ajustar o caminho que movemos antes!
 $pageTitle = "Resultado da Dieta";
 $bodyClass = "processa-page";
 include 'includes/header.php'; 
