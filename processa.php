@@ -19,12 +19,12 @@ $objetivo  = $_POST['objetivo'] ?? 'manter';
 if (empty($sexo) || $idade <= 0 || $peso <= 0 || $altura <= 0 || $atividade <= 0) {
     $pageTitle = "Erro no formulário";
     $pageClass = "processa-page";
-    include 'header.php';
+    include 'includes/header.php';
     echo "<div class='container'>";
     echo "<h2>Erro: preencha todos os campos corretamente.</h2>";
     echo "<p><a href='formulario.php' class='btn btn-outline'>Voltar</a></p>";
     echo "</div>";
-    include 'footer.php';
+    include 'includes/footer.php';
     exit;
 }
 
