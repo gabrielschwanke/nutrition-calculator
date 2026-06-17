@@ -7,7 +7,7 @@ include 'includes/header.php';
 <div class="login-layout">
     <div class="login-left">
         <div class="login-image">
-            <img src="img/nutricionista.png" alt="Nutricionista">
+            <img src="assets/img/nutricionista.png" alt="Nutricionista">
         </div>
         <div class="login-info">
             <h1>
