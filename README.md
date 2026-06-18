@@ -6,6 +6,34 @@ In addition, the system provides personalized guidance, performance charts, mode
 
 ---
 
+## 🌐 Live Demo
+
+🔗 **Access the application online:**
+
+https://nutrition-calculator-production.up.railway.app/
+
+---
+
+## 📷 Screenshots
+
+### Login Screen
+
+![Login Screen](assets/img/imagens/login-sreen.png)
+
+### Dashboard
+
+![Dashboard](assets/img/imagens/dashboard-page.png)
+
+### Macronutrient Calculation
+
+![Calculation](assets/img/imagens/calculation.png)
+
+### Performance Page
+
+![Performance](assets/img/imagens/performace-page.png)
+
+---
+
 ## 🚀 Main Features
 
 - 🔐 **Authentication**
@@ -45,26 +73,6 @@ In addition, the system provides personalized guidance, performance charts, mode
 - **Chart.js**
 - **Custom CSS Animations**
 - Railway (Deployment)
-
----
-
-## 📷 Screenshots
-
-### Login Screen
-
-![Login Screen](assets/img/imagens/login-sreen.png)
-
-### Dashboard
-
-![Dashboard](assets/img/imagens/dashboard-page.png)
-
-### Macronutrient Calculation
-
-![Calculation](assets/img/imagens/calculation.png)
-
-### Performance Page
-
-![Performance](assets/img/imagens/performace-page.png)
 
 ---
 
@@ -194,13 +202,6 @@ calculadora-nutricional/
 └── README.md
 
 ```
----
-
-## 🌐 Live Demo
-
-🔗 **Access the application online:**
-
-https://nutrition-calculator-production.up.railway.app/
 
 ---
 
@@ -208,6 +209,4 @@ https://nutrition-calculator-production.up.railway.app/
 
 Gabriel Pereira Schwanke
 
-Systems Analysis and Development Student.
-
-Full-stack web application developed with PHP, MySQL, JavaScript, and Chart.js, featuring authentication, nutritional calculations, performance tracking, and deployment on Railway.
+Frontend Developer | Systems Analysis and Development Student
