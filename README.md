@@ -156,9 +156,44 @@ http://localhost/calculadora-nutricional/
 ---
 
 ## 📁 Project Structure
+```
+calculadora-nutricional/
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── icons/
+│   └── js/
+│       └── custom-select.js
+│
+├── includes/
+│   ├── conexao.php
+│   ├── footer.php
+│   └── header.php
+│
+├── cadastro.php
+├── contato.php
+├── desempenho.php
+├── formulario.php
+├── funcionalidades.php
+├── index.php
+├── logout.php
+├── perfil.php
+├── planos.php
+├── processa.php
+├── registrar.php
+├── resultado.php
+├── sobre.php
+├── suporte.php
+├── validar_login.php
+├── verifica_login.php
+│
+├── .gitignore
+├── database.sql
+├── Dockerfile
+└── README.md
 
-calculadora-nutricional/ │ ├── assets/ │ ├── css/ │ │ ├── icons/ │ │ └── style.css │ └── js/ │ └── custom-select.js │ ├── includes/ │ ├── conexao.php │ ├── footer.php │ └── header.php │ ├── .gitignore ├── README.md ├── database.sql ├── Dockerfile │ ├── cadastro.php ├── contato.php ├── desempenho.php ├── formulario.php ├── funcionalidades.php ├── index.php ├── logout.php ├── perfil.php ├── planos.php ├── processa.php ├── registrar.php ├── resultado.php ├── sobre.php ├── suporte.php ├── validar_login.php └── verifica_login.php
-
+```
 ---
 
 ## 🌐 Live Demo
